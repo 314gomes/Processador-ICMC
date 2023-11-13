@@ -1,5 +1,6 @@
 #include "Model.h"
 #include <iostream>
+#include <time.h>
 
 void* processaAutomatico(void *data)
 {	if(data == NULL)
@@ -7,17 +8,22 @@ void* processaAutomatico(void *data)
 
 	Model *model = (Model*) data;
 
-	int contador = 0;
+	struct timespec inicio, fim, fim_processamento, sleep = {0, 0};
+	long base_time = 1000;
 
 	while(model->getProcessamento()) { // automatico
+		clock_gettime(CLOCK_MONOTONIC, &inicio);
+		
+		fim = inicio;
+		fim.tv_nsec = fim.tv_nsec + base_time;
+		
 		model->processador();
 
-		contador++;
+		clock_gettime(CLOCK_MONOTONIC, &fim_processamento);
 
-		if(contador > 500) {
-			model->delay();
-			contador = 0;
-		}
+		sleep.tv_nsec = fim.tv_nsec - fim_processamento.tv_nsec;
+
+		nanosleep(&sleep, nullptr);
 	}
 	g_thread_exit(g_thread_self());
 	
@@ -849,4 +855,3 @@ void Model::processador() {
 		default: break;
 	}
 }
-
