@@ -9,13 +9,12 @@ void* processaAutomatico(void *data)
 	Model *model = (Model*) data;
 
 	struct timespec inicio, fim, fim_processamento, sleep = {0, 0};
-	long base_time = 1000;
 
 	while(model->getProcessamento()) { // automatico
 		clock_gettime(CLOCK_MONOTONIC, &inicio);
 		
 		fim = inicio;
-		fim.tv_nsec = fim.tv_nsec + base_time;
+		fim.tv_nsec = fim.tv_nsec + model->getDelay();
 		
 		model->processador();
 
@@ -399,23 +398,12 @@ unsigned int Model::model_rotr(const unsigned int value, int shift) {
 	return aux &= 65535;											// retorna somente os 16 primeiros bits do numero
 }
 
-void Model::delay() { 
-/*
-	void Model::delay(clock_t wait)
 
-	clock_t goal = ( wait + clock() );
-	while( goal > clock() );
-//*/
+long Model::getDelay() { return varDelay; }
 
-	//g_print("Delay: %d\n", varDelay);
-
-	clock_t goal = ( varDelay + clock() );
-	while( goal > clock() );
-}
-
-int Model::getDelay() { return varDelay; }
-
-void Model::setDelay(int valor) {	
+void Model::setDelay(long valor) {
+	
+	
 	// se igual nao faz nada
 	if(varDelay == valor)
 		return;

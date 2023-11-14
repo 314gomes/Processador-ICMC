@@ -50,7 +50,7 @@ class Model : public ModelInterface
 		int key;
 		int auxpc;
 		int pc2;
-		int varDelay;
+		long varDelay;
 		bool automatico;
 
 		// -- Video ---
@@ -161,9 +161,9 @@ class Model : public ModelInterface
 
 		void processador();
 
-		int getDelay();
+		long getDelay();
 
-		void setDelay(int valor);
+		void setDelay(long valor);
 };
 
 #endif

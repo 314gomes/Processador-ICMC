@@ -143,9 +143,9 @@ delay:
 	push r0
 	push r1
 	
-	loadn r1, #5  ; a
+	loadn r1, #1  ; a
    Delay_volta2:				;Quebrou o contador acima em duas partes (dois loops de decremento)
-	loadn r0, #300000	; b
+	loadn r0, #300	; b
    Delay_volta: 
 	dec r0					; (4*a + 6)b = 1000000  == 1 seg  em um clock de 1MHz
 	jnz Delay_volta	

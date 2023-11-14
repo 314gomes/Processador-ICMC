@@ -65,9 +65,9 @@ class ModelInterface
 		// ------ Processador ---------
 		virtual void setProcessamento(bool automatico) = 0;
 
-		virtual int getDelay() = 0;
+		virtual long getDelay() = 0;
 
-		virtual void setDelay(int valor) = 0;
+		virtual void setDelay(long valor) = 0;
 
 };
 

@@ -58,22 +58,13 @@
 
 #define N_LINHAS 35
 
-#ifndef _linux_
+// Delays em nanosegundos
+#define MUITO_RAPIDA 100
+#define RAPIDA 			 500
+#define MEDIA 			 1000
+#define LENTA				 5000
+#define MUITO_LENTA  10000
 
-#define MUITO_RAPIDA 1
-#define RAPIDA 			 3
-#define MEDIA 			 25
-#define LENTA				 50
-#define MUITO_LENTA  100
-
-#else
-#define MUITO_RAPIDA 1
-#define RAPIDA 			 10000
-#define MEDIA 			 25000
-#define LENTA				 50000
-#define MUITO_LENTA  100000
-
-#endif
 
 #endif
 

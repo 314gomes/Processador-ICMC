@@ -423,14 +423,14 @@ void View::criaEditar(GtkWidget *menubar) {
 
 
 	// ------ Botao Velocidade ---------
-	GtkWidget	*velocidade = gtk_menu_item_new_with_label("Velocidade"),
+	GtkWidget	*velocidade = gtk_menu_item_new_with_label("Clock"),
 		*velocidadeMenu = gtk_menu_new();
 
-	GtkWidget	*velocidadeMedia 					= gtk_radio_menu_item_new_with_label(NULL, "Média"),
-		*velocidadeMuitoRapida	= gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM (velocidadeMedia), "Muito Rápida"),
-		*velocidadeRapida		= gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM (velocidadeMedia), "Rápida"),
-		*velocidadeLenta 		= gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM (velocidadeMedia), "Lenta"),
-		*velocidadeMuitoLenta 	= gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM (velocidadeMedia), "Muito Lenta");
+	GtkWidget	*velocidadeMedia 					= gtk_radio_menu_item_new_with_label(NULL, "1Mhz"),
+		*velocidadeMuitoRapida	= gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM (velocidadeMedia), "10Mhz"),
+		*velocidadeRapida		= gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM (velocidadeMedia), "5MHz"),
+		*velocidadeLenta 		= gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM (velocidadeMedia), "500KHz"),
+		*velocidadeMuitoLenta 	= gtk_radio_menu_item_new_with_label_from_widget(GTK_RADIO_MENU_ITEM (velocidadeMedia), "100KHz");
 
 	gtk_menu_shell_append (GTK_MENU_SHELL (editMenu), velocidade);
 
