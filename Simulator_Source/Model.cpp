@@ -128,6 +128,20 @@ void Model::setRegistrador(int *vetor) {
 	Reg->updateRegistradores();
 }
 
+// -------- clock segundos e ms -----------
+int Model::getClock(int select){
+	timespec clk;
+	clock_gettime(CLOCK_MONOTONIC, &clk);
+	
+	// selecionou pegar segundos
+	if(select == 1){
+		return clk.tv_sec;
+	}
+	// selecionou pegar microssegundos
+	else{
+		return clk.tv_nsec / 1000000;
+	}
+}
 
 // -------- PC -----------
 int Model::getPC() { return pc; }
@@ -476,6 +490,9 @@ void Model::processador() {
 					break;
 				case 1:
 					reg[rx] = sp;
+					break;
+				case 2:
+					reg[rx] = pega_pedaco(getClock(ry), 15, 0) ;
 					break;
 				default:
 					sp = reg[rx];

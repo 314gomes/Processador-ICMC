@@ -81,6 +81,8 @@ class Model : public ModelInterface
 
 		void setRegistrador(int *vetor);
 
+		// -------- clock segundos e ms -----------
+		int getClock(int select);
 
 		// -------- PC -----------
 		int getPC();
