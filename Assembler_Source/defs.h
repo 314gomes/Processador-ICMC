@@ -335,6 +335,8 @@
 #define REG7_CODE 7
 #define FR_CODE 8
 #define SP_CODE 9
+#define CLKS_CODE 10
+#define CLKMS_CODE 11
 /* #define REGZ_CODE 9 */
 
 /* Definicoes dos registradores (binarios em strings) */
@@ -348,16 +350,18 @@
 #define REG7 "111"
 
 /* Definicoes das strings de registradores */
-#define REG0_STR "R0"
-#define REG1_STR "R1"
-#define REG2_STR "R2"
-#define REG3_STR "R3"
-#define REG4_STR "R4"
-#define REG5_STR "R5"
-#define REG6_STR "R6"
-#define REG7_STR "R7"
-#define FR_STR   "FR"
-#define SP_STR   "SP"
+#define REG0_STR  "R0"
+#define REG1_STR  "R1"
+#define REG2_STR  "R2"
+#define REG3_STR  "R3"
+#define REG4_STR  "R4"
+#define REG5_STR  "R5"
+#define REG6_STR  "R6"
+#define REG7_STR  "R7"
+#define FR_STR    "FR"
+#define SP_STR    "SP"
+#define CLKS_STR  "RCLKS" // registrador contagem de segundos
+#define CLKMS_STR "RCLKMS" // registrador contagem de ms
 /* #define REGZ_STR "RZ" */
 
 /*

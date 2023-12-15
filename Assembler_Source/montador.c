@@ -588,23 +588,33 @@ void MontarInstrucoes(void)
                     str_tmp2 = parser_GetItem_s();
                     val2 = BuscaRegistrador(str_tmp2);
                     free(str_tmp2);
-		    if(val1 == SP_CODE){
-			str_tmp2 = ConverteRegistrador(val2);
-			sprintf(str_msg,"%s%s0000011",MOV,str_tmp2);
-			free(str_tmp2);
-			}
-		    else if(val2 == SP_CODE){
-			str_tmp1 = ConverteRegistrador(val1);
-			sprintf(str_msg,"%s%s0000001",MOV,str_tmp1);
-			free(str_tmp1);
-			}
-		    else {
-			str_tmp1 = ConverteRegistrador(val1);
-			str_tmp2 = ConverteRegistrador(val2);
-			sprintf(str_msg,"%s%s%s0000",MOV,str_tmp1,str_tmp2);
-			free(str_tmp1);
-			free(str_tmp2);
-			}
+                    if(val1 == SP_CODE){
+                        str_tmp2 = ConverteRegistrador(val2);
+                        sprintf(str_msg,"%s%s0000011",MOV,str_tmp2);
+                        free(str_tmp2);
+                    }
+                    else if(val2 == SP_CODE){
+                        str_tmp1 = ConverteRegistrador(val1);
+                        sprintf(str_msg,"%s%s0000001",MOV,str_tmp1);
+                        free(str_tmp1);
+                    }
+                    else if((val1 == CLKMS_CODE) || (val1 == CLKS_CODE)){
+                        parser_Abort("NAO PODE ESCREVER NO REGISTRADOR DE CLOCK");
+                    }
+                    else if((val2 == CLKMS_CODE) || (val2 == CLKS_CODE)){
+                        str_tmp1 = ConverteRegistrador(val1);
+                        str_tmp2 = ConverteRegistrador(val2);
+                        sprintf(str_msg,"%s%s%s0010",MOV,str_tmp1,str_tmp2);
+                        free(str_tmp1);
+                        free(str_tmp2);
+                    }
+                    else {
+                        str_tmp1 = ConverteRegistrador(val1);
+                        str_tmp2 = ConverteRegistrador(val2);
+                        sprintf(str_msg,"%s%s%s0000",MOV,str_tmp1,str_tmp2);
+                        free(str_tmp1);
+                        free(str_tmp2);
+                    }
 		    
                     parser_Write_Inst(str_msg,end_cnt);
                     end_cnt += 1;
@@ -2722,6 +2732,14 @@ int BuscaRegistrador(char * nome)
     {
         return SP_CODE;
     }
+    else if (strcmp(nome,CLKS_STR) == 0)
+    {
+        return CLKS_CODE;
+    }
+    else if (strcmp(nome,CLKMS_STR) == 0)
+    {
+        return CLKMS_CODE;
+    }
     else
     {
         /* Busca EQU. Se nao encontrar, entao retorna erro. */
@@ -2759,6 +2777,12 @@ char * ConverteRegistrador(int num)
         break;
     case REG7_CODE :
         strcpy(ret,REG7);
+        break;
+    case CLKMS_CODE :
+        strcpy(ret,REG0);
+        break;
+    case CLKS_CODE :
+        strcpy(ret,REG1);
         break;
     default :
         parser_Abort("Registrador invalido!");
