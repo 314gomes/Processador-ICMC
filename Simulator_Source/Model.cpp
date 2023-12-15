@@ -421,7 +421,7 @@ void Model::processador() {
 
 	unsigned int letra;
 
-  // ----- Ciclo de Busca: --------
+  	// ----- Ciclo de Busca: --------
 	ir = mem[pc];
 
 	if(pc > 32767) {
@@ -442,171 +442,170 @@ void Model::processador() {
 
 	switch(opcode) {
 		case INCHAR:
-					//timeout(9999);    // tempo que espera pelo getch()
+			//timeout(9999);    // tempo que espera pelo getch()
 			key = controller->getKey(); //getch();
 			//timeout(0);    		// tempo que espera pelo getch()
 			reg[rx] = pega_pedaco(key,7,0);
 
 			//if(reg[rx] != 255)
 				//reg[rx] = pega_pedaco(reg[rx],5,0);
-				break;
+			break;
 
 		case OUTCHAR:
-				if(reg[ry] > 1199 || reg[ry] < 0)
-				{	cout << "ERRO - tentou escrever na posição da tela: " << reg[ry] << endl;
-					break;
-				}
-
-				letra = reg[rx] & 0x7f;
-
-				if(letra > 0)
-			temp = letra;// + 32;
-				else
-					temp = 0;
-
-		block[reg[ry]].color = pega_pedaco(reg[rx], 11, 8);
-		block[reg[ry]].sym = temp * 8;
-				Vid->updateVideo(reg[ry]);
+			if(reg[ry] > 1199 || reg[ry] < 0) {
+				cout << "ERRO - tentou escrever na posição da tela: " << reg[ry] << endl;
 				break;
+			}
 
-			case MOV:
-				switch(pega_pedaco(ir,1,0))
-				{ case 0:
-						reg[rx] = reg[ry];
-						break;
-					case 1:
-						reg[rx] = sp;
-						break;
-					default:
-						sp = reg[rx];
+			letra = reg[rx] & 0x7f;
+
+			if(letra > 0)
+				temp = letra;// + 32;
+			else
+				temp = 0;
+
+			block[reg[ry]].color = pega_pedaco(reg[rx], 11, 8);
+			block[reg[ry]].sym = temp * 8;
+			Vid->updateVideo(reg[ry]);
+			break;
+
+		case MOV:
+			switch(pega_pedaco(ir,1,0)) {
+				case 0:
+					reg[rx] = reg[ry];
 					break;
-				}
-		break;
+				case 1:
+					reg[rx] = sp;
+					break;
+				default:
+					sp = reg[rx];
+				break;
+			}
+			break;
 
 		case STORE:
-		mem[mem[pc]] = reg[rx];
-		pc++;
-		break;
+			mem[mem[pc]] = reg[rx];
+			pc++;
+			break;
 
 		case STOREINDEX:
-		mem[reg[rx]] = reg[ry];
-		break;
+			mem[reg[rx]] = reg[ry];
+			break;
 
 		case LOAD:
-		reg[rx] = mem[mem[pc]];
-		pc++;
-		break;
+			reg[rx] = mem[mem[pc]];
+			pc++;
+			break;
 
 		case LOADIMED:
-		reg[rx] = mem[pc];
-		pc++;
-		break;
+			reg[rx] = mem[pc];
+			pc++;
+			break;
 
 		case LOADINDEX:
-		reg[rx] = mem[reg[ry]];
-		break;
+			reg[rx] = mem[reg[ry]];
+			break;
 
 		case LAND:
-		reg[rx] = reg[ry] & reg[rz];
-				FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
-		if(reg[rx] == 0)
-					FR[3] = 1;
+			reg[rx] = reg[ry] & reg[rz];
+			FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
+			if(reg[rx] == 0)
+				FR[3] = 1;
 		break;
 
 		case LOR:
-		reg[rx] = reg[ry] | reg[rz];
-				FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
-		if(reg[rx] == 0)
-					FR[3] = 1;
+			reg[rx] = reg[ry] | reg[rz];
+			FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
+			if(reg[rx] == 0)
+				FR[3] = 1;
 		break;
 
 		case LXOR:
-		reg[rx] = reg[ry] ^ reg[rz];
-				FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
-		if(reg[rx] == 0)
-					FR[3] = 1;
+			reg[rx] = reg[ry] ^ reg[rz];
+			FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
+			if(reg[rx] == 0)
+				FR[3] = 1;
 		break;
 
 		case LNOT:
-		reg[rx] =  ~(reg[ry]);
-				FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
-		if(reg[rx] == 0)
-					FR[3] = 1;
+			reg[rx] =  ~(reg[ry]);
+			FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
+			if(reg[rx] == 0)
+				FR[3] = 1;
 		break;
 
 		case CMP:
-				//if(rx == 1200)
-				//	printf("valor de ry: %d\n", ry);
-
-		if (reg[rx] > reg[ry])
-				{	FR[2] = 0; // FR = <...|zero|equal|lesser|greater>
-					FR[1] = 0;
-					FR[0] = 1;
-				}
-		else if (reg[rx] < reg[ry])
-				{	FR[2] = 0; // FR = <...|zero|equal|lesser|greater>
-					FR[1] = 1;
-					FR[0] = 0;
-				}
-		else // reg[rx] == reg[ry]
-				{	FR[2] = 1; // FR = <...|zero|equal|lesser|greater>
-					FR[1] = 0;
-					FR[0] = 0;
-					//printf("rx == ry\n");
-				}
-		break;
+			//if(rx == 1200)
+			//	printf("valor de ry: %d\n", ry);
+			if (reg[rx] > reg[ry]) {
+				FR[2] = 0; // FR = <...|zero|equal|lesser|greater>
+				FR[1] = 0;
+				FR[0] = 1;
+			}
+			else if (reg[rx] < reg[ry])	{
+				FR[2] = 0; // FR = <...|zero|equal|lesser|greater>
+				FR[1] = 1;
+				FR[0] = 0;
+			}
+			else { // reg[rx] == reg[ry] 
+				FR[2] = 1; // FR = <...|zero|equal|lesser|greater>
+				FR[1] = 0;
+				FR[0] = 0;
+				//printf("rx == ry\n");
+			}
+			break;
 
 		case JMP:
-				la = pega_pedaco(ir,9,6);
+			la = pega_pedaco(ir,9,6);
 
-				if((la == 0) // NO COND
-					|| (FR[0]==1 && (la==7)) 							// GREATER
-					|| ((FR[2]==1 || FR[0]==1) && (la==9))  // GREATER EQUAL
-					|| (FR[1]==1 && (la==8)) 							// LESSER
-					|| ((FR[2]==1 || FR[1]==1) && (la==10)) // LESSER EQUAL
-					|| (FR[2]==1 && (la==1)) 							// EQUAL
-					|| (FR[2]==0 && (la==2)) 							// NOT EQUAL
-					|| (FR[3]==1 && (la==3)) 							// ZERO
-					|| (FR[3]==0 && (la==4)) 							// NOT ZERO
-					|| (FR[4]==1 && (la==5)) 							// CARRY
-					|| (FR[4]==0 && (la==6)) 							// NOT CARRY
-					|| (FR[5]==1 && (la==11)) 						// OVERFLOW
-					|| (FR[5]==0 && (la==12)) 						// NOT OVERFLOW
-					|| (FR[6]==1 && (la==14)) 						// NEGATIVO
-					|| (FR[9]==1 && (la==13))) 						// DIVBYZERO
-					{ pc = mem[pc];
-									}
-					else
-						pc++;
+			if((la == 0) // NO COND
+				|| (FR[0]==1 && (la==7)) 							// GREATER
+				|| ((FR[2]==1 || FR[0]==1) && (la==9))  // GREATER EQUAL
+				|| (FR[1]==1 && (la==8)) 							// LESSER
+				|| ((FR[2]==1 || FR[1]==1) && (la==10)) // LESSER EQUAL
+				|| (FR[2]==1 && (la==1)) 							// EQUAL
+				|| (FR[2]==0 && (la==2)) 							// NOT EQUAL
+				|| (FR[3]==1 && (la==3)) 							// ZERO
+				|| (FR[3]==0 && (la==4)) 							// NOT ZERO
+				|| (FR[4]==1 && (la==5)) 							// CARRY
+				|| (FR[4]==0 && (la==6)) 							// NOT CARRY
+				|| (FR[5]==1 && (la==11)) 						// OVERFLOW
+				|| (FR[5]==0 && (la==12)) 						// NOT OVERFLOW
+				|| (FR[6]==1 && (la==14)) 						// NEGATIVO
+				|| (FR[9]==1 && (la==13))) 						// DIVBYZERO
+				{ pc = mem[pc];
+								}
+				else
+					pc++;
 			break;
 
 		case PUSH:
-		if(!pega_pedaco(ir,6,6)) // Registrador
-					mem[sp] = reg[rx];
-		else  // FR
-				{	temp = 0;
-			for(i=16; i--; ) 		// Converte o vetor FR para int
-						temp = temp + (int) (FR[i] * (pow(2.0,i)));
-			mem[sp] = temp;
-		}
-		sp--;
-		break;
+			if(!pega_pedaco(ir,6,6)) // Registrador
+				mem[sp] = reg[rx];
+			else { // FR
+				temp = 0;
+				for(i=16; i--; ) 		// Converte o vetor FR para int
+					temp = temp + (int) (FR[i] * (pow(2.0,i)));
+				mem[sp] = temp;
+			}
+			sp--;
+			break;
 
 		case POP:
-		sp++;
-		if(!pega_pedaco(ir,6,6))  // Registrador
-					reg[rx] = mem[sp];
-		else // FR
-				{ for(i=16; i--; )				// Converte o int mem[sp] para o vetor FR
-						FR[i] = pega_pedaco(mem[sp],i,i);
-		}
-		break;
+			sp++;
+			if(!pega_pedaco(ir,6,6))  // Registrador
+						reg[rx] = mem[sp];
+			else { // FR
+			for(i=16; i--; )				// Converte o int mem[sp] para o vetor FR
+				FR[i] = pega_pedaco(mem[sp],i,i);
+			}
+			break;
 
 		case CALL:
 				la = pega_pedaco(ir,9,6);
 
 				if( (la == 0) // NO COND
-				|| (FR[0]==1 && (la==7)) 							// GREATER
+					|| (FR[0]==1 && (la==7)) 							// GREATER
 					|| ((FR[2]==1 || FR[0]==1) && (la==9))  // GREATER EQUAL
 					|| (FR[1]==1 && (la==8)) 							// LESSER
 					|| ((FR[2]==1 || FR[1]==1) && (la==10)) // LESSER EQUAL
@@ -640,15 +639,15 @@ void Model::processador() {
 			if(pega_pedaco(ir,0,0))   // Soma com Carry
 				reg[rx] += FR[4];
 
-					FR[3] = 0; 									// -- FR = <...|zero|equal|lesser|greater>
-					FR[4] = 0;
+			FR[3] = 0; 									// -- FR = <...|zero|equal|lesser|greater>
+			FR[4] = 0;
 
 			if(!reg[rx]) // Se resultado = 0, seta o Flag de Zero
-						FR[3] = 1;
-					else
-				if(reg[rx] > 0xffff)
-						{ FR[4] = 1;  // Deu Carry
-				reg[rx] = reg[rx] - 0xffff;
+				FR[3] = 1;
+			else
+				if(reg[rx] > 0xffff) {
+					FR[4] = 1;  // Deu Carry
+					reg[rx] = reg[rx] - 0xffff;
 				}
 			break;
 
@@ -660,17 +659,20 @@ void Model::processador() {
 			reg[rx] = reg[ry] - reg[rz]; // Subtracao sem Carry
 
 			if(pega_pedaco(ir,0,0)==1)  // Subtracao com Carry
-			reg[rx] += FR[4];
+				reg[rx] += FR[4];
 
-					FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
-					FR[9] = 0;
+			FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
+			FR[9] = 0;
 
 			if(!reg[rx]) // Se resultado = 0, seta o Flag de Zero
-						FR[3] = 1;
+				FR[3] = 1;
 			else
-				if(reg[rx] < 0x0000)
-						{ FR[9] = 1;  // Resultado e' Negativo
-				reg[rx] = 0;
+				if(reg[rx] < 0x0000) {
+					FR[9] = 1;  // Resultado e' Negativo
+					//reg[rx] = 0;
+				}
+				if(reg[rx] < -0xffff) { // modificado para aceitar numeros negativos
+					reg[rx] += 0xffff;
 				}
 			break;
 
@@ -678,73 +680,74 @@ void Model::processador() {
 			reg[rx] = reg[ry] * reg[rz]; // MULT sem Carry
 
 			if(pega_pedaco(ir,0,0)==1)  // MULT com Carry
-			reg[rx] += FR[4];
+				reg[rx] += FR[4];
 
-					FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
-					FR[5] = 0;
+			FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
+			FR[5] = 0;
 
 			if(!reg[rx])
-						FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
+				FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
 			else
 				if(reg[rx] > 0xffff)
-							FR[5] = 1;  // Arithmetic Overflow
+					FR[5] = 1;  // Arithmetic Overflow
 			break;
 
 		case DIV:
-			if(!reg[rz])
-					{ FR[6] = 1;  // Arithmetic Overflow
-			reg[rx] = 0;
-						FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
+			if(!reg[rz]) {
+				FR[6] = 1;  // Arithmetic Overflow
+				reg[rx] = 0;
+				FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
 			}
-			else
-					{ FR[6] = 0;
+			else {
+				FR[6] = 0;
+				reg[rx] = reg[ry] / reg[rz]; // DIV sem Carry
+				if(pega_pedaco(ir,0,0)==1)  // DIV com Carry
+					reg[rx] += FR[4];
 
-			reg[rx] = reg[ry] / reg[rz]; // DIV sem Carry
-			if(pega_pedaco(ir,0,0)==1)  // DIV com Carry
-				reg[rx] += FR[4];
-
-						FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
+				FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
 				if(!reg[rx])
-							FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
-					}
+					FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
+			}
 			break;
 
 		case LMOD:
 			reg[rx] = reg[ry] % reg[rz];
 
-					FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
+			FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
 
 			if(!reg[rx])
-						FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
-					break;
+				FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
+			break;
 
 		case INC:
-					reg[rx]++;									// Inc Rx
-			if(pega_pedaco(ir,6,6)!=0) // Dec Rx
-			reg[rx] = reg[rx] - 2;
+			reg[rx]++;					// Inc Rx
+			if(pega_pedaco(ir,6,6)!=0)	// Dec Rx
+				reg[rx] = reg[rx] - 2;
 
-					FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
+			FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
 
 			if(!reg[rx])
-						FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
-					break;
+				FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
+			break;
 
 		case SHIFT:
-					FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
+				FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
 
 			if(!reg[rx])
-						FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
+				FR[3] = 1;  // Se resultado = 0, seta o Flag de Zero
 
-					switch(pega_pedaco(ir,6,4))
-			{ case 0: reg[rx] = reg[rx] << pega_pedaco(ir,3,0);					break;
+			switch(pega_pedaco(ir,6,4))	{
+				case 0: reg[rx] = reg[rx] << pega_pedaco(ir,3,0);			break;
 				case 1: reg[rx] = ~((~(reg[rx]) << pega_pedaco(ir,3,0)));	break;
-				case 2: reg[rx] = reg[rx] >> pega_pedaco(ir,3,0);					break;
+				case 2: reg[rx] = reg[rx] >> pega_pedaco(ir,3,0);			break;
 				case 3: reg[rx] = ~((~(reg[rx]) >> pega_pedaco(ir,3,0)));	break;
-						default:
-					if(pega_pedaco(ir,6,5)==2) // ROTATE LEFT
-					{  reg[rx] = model_rotl(reg[rx],pega_pedaco(ir,3,0)); break; }
-				reg[rx] = model_rotr(reg[rx],pega_pedaco(ir,3,0)); break;
+				default:
+					if(pega_pedaco(ir,6,5)==2) { // ROTATE LEFT 
+						reg[rx] = model_rotl(reg[rx],pega_pedaco(ir,3,0));
+						break;					
 					}
+					reg[rx] = model_rotr(reg[rx],pega_pedaco(ir,3,0)); break;
+			}
 			break;
 
 		case SETC:
@@ -766,6 +769,10 @@ void Model::processador() {
 	int ir2;
 
 	// ----- Ciclo de Busca: --------
+	if(pc > 32767) {
+		printf("Ultrapassou limite da memoria, coloque um jmp no fim do código\n");
+		exit(1);
+	}
 	ir2 = mem[pc];
 	pc2 = pc + 1;
 	// ----------- -- ---------------

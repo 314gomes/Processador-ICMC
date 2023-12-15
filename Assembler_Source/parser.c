@@ -190,6 +190,7 @@ void parser_SkipUntil(char c)
     while (Look != c)
     {
         parser_GetChar();
+        if (Look == '\n') parser_Message("Pulou linha antes do argumento");
         if (Look == EOF) parser_Match(c); /* Match sempre falha, entao da erro se chegar no EOF */
     }
     parser_Match(c);
