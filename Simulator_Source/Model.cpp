@@ -679,18 +679,19 @@ void Model::processador() {
 				reg[rx] += FR[4];
 
 			FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
-			FR[9] = 0;
+			FR[6] = 0;
 
 			if(!reg[rx]) // Se resultado = 0, seta o Flag de Zero
 				FR[3] = 1;
-			else
+			else{
 				if(reg[rx] < 0x0000) {
-					FR[9] = 1;  // Resultado e' Negativo
+					FR[6] = 1;  // Resultado e' Negativo
 					//reg[rx] = 0;
 				}
 				if(reg[rx] < -0xffff) { // modificado para aceitar numeros negativos
 					reg[rx] += 0xffff;
 				}
+			}
 			break;
 
 		case MULT:
@@ -740,6 +741,13 @@ void Model::processador() {
 			reg[rx]++;					// Inc Rx
 			if(pega_pedaco(ir,6,6)!=0)	// Dec Rx
 				reg[rx] = reg[rx] - 2;
+
+			if(reg[rx] < 0){
+				FR[6] = 1;
+			}
+			else{
+				FR[6] = 0;
+			}
 
 			FR[3] = 0; // -- FR = <...|zero|equal|lesser|greater>
 
