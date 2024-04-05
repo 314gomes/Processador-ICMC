@@ -1,10 +1,10 @@
-/* Quartus II 64-Bit Version 14.1.0 Build 186 12/03/2014 SJ Full Version */
+/* Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(5CEBA4F23) Path("/home/perina/Desktop/AP9 - DE0-CV/") File("AP9.sof") MfrSpec(OpMask(1));
+		Device PartName(5CEBA4F23) Path("C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/") File("AP9.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
