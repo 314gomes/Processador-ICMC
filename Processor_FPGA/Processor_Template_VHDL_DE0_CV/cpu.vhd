@@ -379,6 +379,14 @@ begin
 -- LOAD Indexado por registrador 			RX <- M(RY)
 --========================================================================		
 			IF(IR(15 DOWNTO 10) = LOADINDEX) THEN
+				-- Configurar para leitura
+				RW <= '0';
+				-- Enviar valor de RY para o barramento de endereço
+				M4 := Reg(RY);
+				M1 <= M4;
+				-- Enviar valor do barramento de dado para RX
+				selM2 := sMeM;
+				LoadReg(RX) := '1';
 				
 				state := fetch;
 			END IF;					
@@ -387,6 +395,14 @@ begin
 -- STORE indexado por registrador 			M[RX] <- RY
 --========================================================================		
 			IF(IR(15 DOWNTO 10) = STOREINDEX) THEN 
+				-- Configurar para escrita
+				RW <= '1';
+				-- Enviar valor de RX para o barramento de endereço
+				M4 := Reg(RX);
+				M1 <= M4;
+				-- Enviar valor de RY para o barramento de dado
+				M3 := Reg(RY);
+				M5 <= M3;
 				
 				state := fetch;
 			END IF;					
@@ -402,9 +418,20 @@ begin
 -- MOV SP RX    SP <- RX         Format: < inst(6) | RX(3) | xxx | xx | 11 >
 
 --========================================================================		
-			IF(IR(15 DOWNTO 10) = MOV) THEN 
-			
-			  
+			IF(IR(15 DOWNTO 10) = MOV) THEN
+				case IR(1 downto 0) is
+					when "00" =>
+						M4 := Reg(RY);
+						selM2 := sM4;
+						LoadReg(RX) := '1';	
+					
+					when others =>
+						M4 := Reg(RX);
+						LoadSP := '1';
+						
+				
+				end case;
+				
 				state := fetch;
 			END IF;
 
