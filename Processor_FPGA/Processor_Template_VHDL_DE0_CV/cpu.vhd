@@ -527,7 +527,17 @@ begin
 -- CMP		RX, RY
 --========================================================================		
 			IF(IR(15 DOWNTO 14) = LOGIC AND IR(13 DOWNTO 10) = CMP) THEN 
+			 	M3 := Reg(RX);
+				M4 := Reg(RY);
+								
+				x <= M3;
+				y <= M4;
 				
+				OP(5 DOWNTO 0) <= IR(15 DOWNTO 10);
+				OP(6) <= IR(0);
+				
+				selM6 := sULA;
+				LoadFR := '1';
 				state := fetch;
 			END IF;
 		
