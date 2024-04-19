@@ -468,6 +468,12 @@ begin
 --========================================================================			
 			IF(IR(15 DOWNTO 14) = ARITH AND (IR(13 DOWNTO 10) = INC))	THEN
 				
+				IF(IR(6) = '0') THEN
+					Reg(RX) := Reg(RX) + x"0001";
+				ELSE
+					Reg(RX) := Reg(RX) - x"0001";
+				END IF;
+				
 				state := fetch;
 			END IF;
 			
@@ -475,6 +481,21 @@ begin
 -- LOGIC OPERATION ('SHIFT', and 'CMP'  NOT INCLUDED)  			RX <- RY (?) RZ
 --========================================================================		
 			IF(IR(15 DOWNTO 14) = LOGIC AND IR(13 DOWNTO 10) /= SHIFT AND IR(13 DOWNTO 10) /= CMP) THEN 
+				M3 := Reg(RY);
+				M4 := Reg(RZ);
+				
+				
+				x <= M3;
+				y <= M4;
+				
+				OP(5 DOWNTO 0) <= IR(15 DOWNTO 10);
+				OP(6) <= IR(0);
+													
+				selM2 := sUla;
+				LoadReg(RX) := '1';
+				
+				selM6 := sULA;
+				LoadFR := '1';
 				
 				state := fetch;
 			END IF;			
