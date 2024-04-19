@@ -413,8 +413,9 @@ begin
 --========================================================================
 -- MOV  			RX/SP <- RY/SP
 
--- MOV RX RY    RX <- RY	  		Format: < inst(6) | RX(3) | RY(3) | xx | x0 >
+-- MOV RX RY    RX <- RY	  		Format: < inst(6) | RX(3) | RY(3) | xx | 00 >
 -- MOV RX SP    RX <- SP         Format: < inst(6) | RX(3) | xxx | xx | 01 >
+-- a ser implementado mov para clock
 -- MOV SP RX    SP <- RX         Format: < inst(6) | RX(3) | xxx | xx | 11 >
 
 --========================================================================		
@@ -423,13 +424,16 @@ begin
 					when "00" =>
 						M4 := Reg(RY);
 						selM2 := sM4;
-						LoadReg(RX) := '1';	
+						LoadReg(RX) := '1';
+					
+					when "01" =>
+						selM2 := sSP;
+						LoadReg(RX) := '1';
 					
 					when others =>
 						M4 := Reg(RX);
 						LoadSP := '1';
-						
-				
+										
 				end case;
 				
 				state := fetch;
@@ -437,8 +441,24 @@ begin
 
 --========================================================================
 -- ARITH OPERATION ('INC' NOT INCLUDED) 			RX <- RY (?) RZ
+-- Format: 
 --========================================================================
 			IF(IR(15 DOWNTO 14) = ARITH AND IR(13 DOWNTO 10) /= INC) THEN
+				M3 := Reg(RY);
+				M4 := Reg(RZ);
+				
+				
+				x <= M3;
+				y <= M4;
+				
+				OP(5 DOWNTO 0) <= IR(15 DOWNTO 10);
+				OP(6) <= IR(0);
+													
+				selM2 := sUla;
+				LoadReg(RX) := '1';
+				
+				selM6 := sULA;
+				LoadFR := '1';
 				
 				state := fetch;
 			END IF;
