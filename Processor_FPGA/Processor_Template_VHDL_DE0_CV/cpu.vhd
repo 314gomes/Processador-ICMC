@@ -622,6 +622,16 @@ begin
 -- PUSH RX
 --========================================================================		
 			IF(IR(15 DOWNTO 10) = PUSH) THEN
+				RW <= '1';
+				M1 <= SP;
+				IF(IR(6) = '0') THEN
+					M3 := Reg(RX);
+				ELSE
+					M3 := Fr;
+				END IF;
+				
+				M5 <= M3;
+				DecSP := '1';
 				
 				state := fetch;
 			END IF;
@@ -630,7 +640,7 @@ begin
 -- POP RX
 --========================================================================
 			IF(IR(15 DOWNTO 10) = POP) THEN
-				
+				IncSP := '1';
 				state := exec;
 			END IF;						
 				
@@ -691,7 +701,6 @@ begin
 --========================================================================
 			IF(IR(15 DOWNTO 10) = LOAD) THEN
 				M1 <= MAR;
-				M2 := mem;
 				selM2 := sMeM;
 				LoadReg(RX) := '1';
 				state := fetch;
@@ -733,6 +742,16 @@ begin
 -- EXEC POP RX/FR
 --========================================================================
 			IF(IR(15 DOWNTO 10) = POP) THEN
+				M1 <= SP;
+				RW <= '0';
+				
+				IF(IR(6) = '0') THEN
+					selM2 := sMeM;
+					LoadReg(RX) := '1';
+				ELSE
+					selM6 := sMeM;
+					LoadFr := '1';
+				END IF;
 				
 				state := fetch;
 			END IF;		
@@ -770,6 +789,7 @@ begin
 			PONTO <= "000";
 		
 		END CASE;	
+		
 		
 	end if;	
 	end process;

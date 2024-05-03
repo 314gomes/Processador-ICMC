@@ -1,5 +1,5 @@
 Flow report for AP9
-Fri Apr 19 17:09:05 2024
+Fri May  3 17:32:40 2024
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri Apr 19 17:08:45 2024       ;
+; Flow Status                     ; Successful - Fri May  3 17:32:29 2024       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; AP9                                         ;
-; Top-level Entity Name           ; AP9                                         ;
+; Top-level Entity Name           ; cpu                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,544 / 18,480 ( 8 % )                      ;
-; Total registers                 ; 685                                         ;
-; Total pins                      ; 30 / 224 ( 13 % )                           ;
+; Logic utilization (in ALMs)     ; 1,299 / 18,480 ( 7 % )                      ;
+; Total registers                 ; 416                                         ;
+; Total pins                      ; 114 / 224 ( 51 % )                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 946,176 / 3,153,920 ( 30 % )                ;
+; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                       ;
 ; Total DSP Blocks                ; 1 / 66 ( 2 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/19/2024 17:03:37 ;
+; Start date & time ; 05/03/2024 17:30:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; AP9                 ;
 +-------------------+---------------------+
@@ -80,20 +80,21 @@ https://fpgasoftware.intel.com/eula.
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; BLOCK_DESIGN_NAMING                 ; QuartusII                              ; Auto          ; --          ; --         ;
-; COMPILER_SIGNATURE_ID               ; 10995770589195.171355701700696         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 10995770589195.171476825802480         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; lpm_rom0.bsf                           ; --            ; --          ; --         ;
 ; MISC_FILE                           ; lpm_rom0.cmp                           ; --            ; --          ; --         ;
 ; MISC_FILE                           ; RAM.bsf                                ; --            ; --          ; --         ;
 ; MISC_FILE                           ; RAM.cmp                                ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; cpu         ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; cpu         ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; cpu         ; Top        ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
 ; SMART_RECOMPILE                     ; On                                     ; Off           ; --          ; --         ;
 ; SYNTH_TIMING_DRIVEN_SYNTHESIS       ; Off                                    ; On            ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; cpu                                    ; AP9           ; --          ; --         ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
@@ -102,11 +103,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:22     ; 1.0                     ; 4945 MB             ; 00:00:32                           ;
-; Fitter               ; 00:04:34     ; 1.1                     ; 6326 MB             ; 00:05:40                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4900 MB             ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:19     ; 1.9                     ; 5168 MB             ; 00:00:19                           ;
-; Total                ; 00:05:22     ; --                      ; --                  ; 00:06:36                           ;
+; Analysis & Synthesis ; 00:00:18     ; 1.0                     ; 4885 MB             ; 00:00:27                           ;
+; Fitter               ; 00:01:05     ; 1.1                     ; 6268 MB             ; 00:02:01                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4865 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:10     ; 1.8                     ; 5115 MB             ; 00:00:13                           ;
+; Total                ; 00:01:38     ; --                      ; --                  ; 00:02:46                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
