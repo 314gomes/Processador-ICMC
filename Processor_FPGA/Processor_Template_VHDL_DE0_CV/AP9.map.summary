@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri May  3 17:31:16 2024
+Analysis & Synthesis Status : Successful - Fri May  3 17:53:13 2024
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : AP9
-Top-level Entity Name : cpu
+Top-level Entity Name : AP9
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 416
-Total pins : 114
+Total registers : 679
+Total pins : 30
 Total virtual pins : 0
-Total block memory bits : 0
+Total block memory bits : 946,176
 Total DSP Blocks : 1
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
