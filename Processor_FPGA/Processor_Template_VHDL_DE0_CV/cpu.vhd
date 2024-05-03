@@ -580,13 +580,41 @@ begin
 --========================================================================
 			IF(IR(15 DOWNTO 10) = CALL) THEN 
 				
+				-- se uma das condicoes for verdadeira
+				IF((IR(9 DOWNTO 6) = "0000") OR
+				((IR(9 DOWNTO 6) = "0111") AND FR(0) = '1') OR
+				((IR(9 DOWNTO 6) = "1001") AND (FR(2) = '1' OR FR(0) = '1')) OR
+				((IR(9 DOWNTO 6) = "1000") AND FR(1) = '1') OR
+				((IR(9 DOWNTO 6) = "1010") AND (FR(2) = '1' OR FR(1) = '1')) OR
+				((IR(9 DOWNTO 6) = "0001") AND FR(2) = '1') OR
+				((IR(9 DOWNTO 6) = "0010") AND FR(2) = '0') OR
+				((IR(9 DOWNTO 6) = "0011") AND FR(3) = '1') OR
+				((IR(9 DOWNTO 6) = "0100") AND FR(3) = '0') OR
+				((IR(9 DOWNTO 6) = "0101") AND FR(4) = '1') OR
+				((IR(9 DOWNTO 6) = "0110") AND FR(4) = '0') OR
+				((IR(9 DOWNTO 6) = "1011") AND FR(5) = '1') OR
+				((IR(9 DOWNTO 6) = "1100") AND FR(5) = '0') OR
+				((IR(9 DOWNTO 6) = "1101") AND FR(6) = '1') OR
+				((IR(9 DOWNTO 6) = "1110") AND FR(9) = '1')) THEN
+					-- salvar pc atual na pilha
+					M1 <= SP;
+					RW <= '1';
+					M5 <= PC;
+					DecSP := '1';
+					IncPC := '0';
+					state := exec;
+				ELSE
+					IncPC := '1';
+					state := fetch;
+				
+				END IF;
 			END IF;
 
 --========================================================================
 -- RTS 			PC <- Mem[SP]
 --========================================================================				
 			IF(IR(15 DOWNTO 10) = RTS) THEN
-
+				IncSP := '1';
 				state := exec;
 			END IF;
 
@@ -684,7 +712,10 @@ begin
 -- EXEC CALL    Pilha <- PC e PC <- 16bit END :
 --========================================================================
 			IF(IR(15 DOWNTO 10) = CALL) THEN
-				
+				M1 <= PC;
+				RW <= '0';
+				LoadPC := '1';
+				IncPC := '0';
 				state := fetch;
 			END IF;
 
@@ -692,7 +723,9 @@ begin
 -- EXEC RTS 			PC <- Mem[SP]
 --========================================================================
 			IF(IR(15 DOWNTO 10) = RTS) THEN
-				
+				M1 <= SP;
+				RW <= '0';
+				LoadPC := '1';
 				state := exec2;
 			END IF;
 			
@@ -716,7 +749,7 @@ begin
 -- EXEC2 RTS 			PC <- Mem[SP]
 --========================================================================
 			IF(IR(15 DOWNTO 10) = RTS) THEN
-				
+				IncPC := '1';
 				state := fetch;
 			END IF;				
 
