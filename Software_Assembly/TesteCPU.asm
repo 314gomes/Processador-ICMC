@@ -32,6 +32,8 @@
 	loadn r0, #6
 	outchar r2, r0
 	
+	call dummy
+
 	; Teste do Move
 	loadn r1, #'E'
 	mov r2, r1
@@ -158,8 +160,8 @@ static Dado + #0, #'B'
 
 	
 	
-	
-	
+dummy:
+rts
 	
 	
 	

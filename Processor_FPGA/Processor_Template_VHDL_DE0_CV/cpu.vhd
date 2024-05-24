@@ -27,7 +27,9 @@ entity cpu is
 			halt_req		: in	std_LOGIC;
 			
 			PC_data		: out STD_LOGIC_VECTOR(15 downto 0);
-			break 		: out STD_LOGIC
+			break 		: out STD_LOGIC;
+			
+			clk_reg_s	: in STD_LOGIC_VECTOR(15 downto 0)
 		);
 end cpu;
 
@@ -429,6 +431,12 @@ begin
 					when "01" =>
 						selM2 := sSP;
 						LoadReg(RX) := '1';
+						
+					when "10" =>
+						M4 := clk_reg_s;
+						selM2 := sM4;
+						LoadReg(RX) := '1';
+											
 					
 					when others =>
 						M4 := Reg(RX);

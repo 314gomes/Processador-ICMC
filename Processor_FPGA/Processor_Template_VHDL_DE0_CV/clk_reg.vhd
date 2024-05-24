@@ -18,8 +18,16 @@ BEGIN
 process 
 begin
   wait until (clock_1khz'EVENT) AND (clock_1khz = '1');
-  	sig_reg_ms <= sig_reg_ms + 1;
 	
+	-- atualizar contador de milisegundos
+	IF sig_reg_ms < 1000 THEN
+		sig_reg_ms <= sig_reg_ms + 1;
+	ELSE
+		sig_reg_ms <= x"0000";
+		sig_reg_s <= sig_reg_s + 1;
+	END IF;
+	
+	clk_reg_s <= sig_reg_s;
 	clk_reg_ms <= sig_reg_ms;
 end process;
 end a;

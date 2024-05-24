@@ -1,5 +1,5 @@
 Flow report for AP9
-Fri May 17 16:58:45 2024
+Fri May 24 18:07:42 2024
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri May 17 16:58:28 2024       ;
+; Flow Status                     ; Successful - Fri May 24 18:07:24 2024       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; AP9                                         ;
 ; Top-level Entity Name           ; AP9                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,733 / 18,480 ( 9 % )                      ;
-; Total registers                 ; 694                                         ;
+; Logic utilization (in ALMs)     ; 1,773 / 18,480 ( 10 % )                     ;
+; Total registers                 ; 758                                         ;
 ; Total pins                      ; 30 / 224 ( 13 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 946,176 / 3,153,920 ( 30 % )                ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/17/2024 16:53:57 ;
+; Start date & time ; 05/24/2024 18:02:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; AP9                 ;
 +-------------------+---------------------+
@@ -80,7 +80,7 @@ https://fpgasoftware.intel.com/eula.
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; BLOCK_DESIGN_NAMING                 ; QuartusII                              ; Auto          ; --          ; --         ;
-; COMPILER_SIGNATURE_ID               ; 10995770589195.171597563712184         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 10995770589195.171658457805444         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; lpm_rom0.bsf                           ; --            ; --          ; --         ;
@@ -102,11 +102,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:26     ; 1.0                     ; 4957 MB             ; 00:00:34                           ;
-; Fitter               ; 00:03:54     ; 1.1                     ; 6333 MB             ; 00:05:16                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4890 MB             ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:16     ; 1.9                     ; 5176 MB             ; 00:00:25                           ;
-; Total                ; 00:04:43     ; --                      ; --                  ; 00:06:21                           ;
+; Analysis & Synthesis ; 00:00:22     ; 1.0                     ; 4937 MB             ; 00:00:31                           ;
+; Fitter               ; 00:03:54     ; 1.1                     ; 6329 MB             ; 00:05:27                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4893 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:17     ; 1.9                     ; 5170 MB             ; 00:00:27                           ;
+; Total                ; 00:04:39     ; --                      ; --                  ; 00:06:31                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
