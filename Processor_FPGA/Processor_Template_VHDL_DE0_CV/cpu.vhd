@@ -29,6 +29,7 @@ entity cpu is
 			PC_data		: out STD_LOGIC_VECTOR(15 downto 0);
 			break 		: out STD_LOGIC;
 			
+			clk_reg_ms	: in STD_LOGIC_VECTOR(15 downto 0);
 			clk_reg_s	: in STD_LOGIC_VECTOR(15 downto 0)
 		);
 end cpu;
@@ -433,7 +434,12 @@ begin
 						LoadReg(RX) := '1';
 						
 					when "10" =>
-						M4 := clk_reg_s;
+						IF Reg(RY) = x"0000" THEN
+							M4 := clk_reg_ms;
+						ELSE
+							M4 := clk_reg_s;
+						END IF;
+						
 						selM2 := sM4;
 						LoadReg(RX) := '1';
 											
@@ -491,7 +497,7 @@ begin
 			IF(IR(15 DOWNTO 14) = LOGIC AND IR(13 DOWNTO 10) /= SHIFT AND IR(13 DOWNTO 10) /= CMP) THEN 
 				M3 := Reg(RY);
 				M4 := Reg(RZ);
-				
+								
 				
 				x <= M3;
 				y <= M4;

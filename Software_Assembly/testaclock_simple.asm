@@ -10,11 +10,16 @@ tinims: var #1
 main:
   loadn r1, #1401
   main_loop:
-    loadn r0, #20;
-    mov r1, RCLKS
-    loadn r2, #5
-    call Imprime_Numero
-    ; inc r1
+    loadn r0, #6; posicao do primeiro digito de segundos
+    mov r1, RCLKS; carregar segundos para r1
+    ; loadn r1, #180
+    call Imprime_Numero; imprimir segundos
+    
+    loadn r0, #46; posicao primeiro digito ms
+    mov r1, RCLKMS; carregar ms para r1
+    ; loadn r1, #42
+    call Imprime_Numero; imprimir ms
+
   jmp main_loop
 breakp
 halt

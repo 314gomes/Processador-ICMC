@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AP9
-Fri May 24 18:03:20 2024
+Fri Jun  7 17:51:03 2024
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -76,13 +76,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 24 18:03:20 2024       ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun  7 17:51:03 2024       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; AP9                                         ;
 ; Top-level Entity Name           ; AP9                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 727                                         ;
+; Total registers                 ; 743                                         ;
 ; Total pins                      ; 30                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 946,176                                     ;
@@ -299,16 +299,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 1719         ;
+; Estimate of Logic utilization (ALMs needed) ; 1724         ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 2854         ;
-;     -- 7 input functions                    ; 40           ;
-;     -- 6 input functions                    ; 511          ;
-;     -- 5 input functions                    ; 811          ;
-;     -- 4 input functions                    ; 514          ;
-;     -- <=3 input functions                  ; 978          ;
+; Combinational ALUT usage for logic          ; 2868         ;
+;     -- 7 input functions                    ; 38           ;
+;     -- 6 input functions                    ; 507          ;
+;     -- 5 input functions                    ; 802          ;
+;     -- 4 input functions                    ; 496          ;
+;     -- <=3 input functions                  ; 1025         ;
 ;                                             ;              ;
-; Dedicated logic registers                   ; 727          ;
+; Dedicated logic registers                   ; 743          ;
 ;                                             ;              ;
 ; I/O pins                                    ; 30           ;
 ; Total MLAB memory bits                      ; 0            ;
@@ -318,8 +318,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
 ; Maximum fan-out                             ; 451          ;
-; Total fan-out                               ; 17340        ;
-; Average fan-out                             ; 4.59         ;
+; Total fan-out                               ; 17352        ;
+; Average fan-out                             ; 4.56         ;
 +---------------------------------------------+--------------+
 
 
@@ -328,7 +328,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                           ; Entity Name         ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |AP9                                         ; 2854 (1)            ; 727 (0)                   ; 946176            ; 1          ; 30   ; 0            ; |AP9                                                                                                                          ; AP9                 ; work         ;
+; |AP9                                         ; 2868 (1)            ; 743 (0)                   ; 946176            ; 1          ; 30   ; 0            ; |AP9                                                                                                                          ; AP9                 ; work         ;
 ;    |POS_CONV:inst13|                         ; 228 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|POS_CONV:inst13                                                                                                          ; POS_CONV            ; work         ;
 ;       |lpm_divide:Div0|                      ; 100 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|POS_CONV:inst13|lpm_divide:Div0                                                                                          ; lpm_divide          ; work         ;
 ;          |lpm_divide_hbm:auto_generated|     ; 100 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|POS_CONV:inst13|lpm_divide:Div0|lpm_divide_hbm:auto_generated                                                            ; lpm_divide_hbm      ; work         ;
@@ -384,8 +384,8 @@ https://fpgasoftware.intel.com/eula.
 ;             |altsyncram_k1j1:auto_generated| ; 2 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |AP9|VGA_MOD:inst|lpm_ram_dq1:inst2|altsyncram:altsyncram_component|altsyncram_k1j1:auto_generated                            ; altsyncram_k1j1     ; work         ;
 ;                |decode_5la:decode3|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|VGA_MOD:inst|lpm_ram_dq1:inst2|altsyncram:altsyncram_component|altsyncram_k1j1:auto_generated|decode_5la:decode3         ; decode_5la          ; work         ;
 ;    |clk_div:inst25|                          ; 30 (30)             ; 37 (37)                   ; 0                 ; 0          ; 0    ; 0            ; |AP9|clk_div:inst25                                                                                                           ; clk_div             ; work         ;
-;    |clk_reg:inst16|                          ; 35 (35)             ; 48 (48)                   ; 0                 ; 0          ; 0    ; 0            ; |AP9|clk_reg:inst16                                                                                                           ; clk_reg             ; work         ;
-;    |cpu:inst12|                              ; 2197 (1625)         ; 388 (388)                 ; 0                 ; 1          ; 0    ; 0            ; |AP9|cpu:inst12                                                                                                               ; cpu                 ; work         ;
+;    |clk_reg:inst16|                          ; 35 (35)             ; 64 (64)                   ; 0                 ; 0          ; 0    ; 0            ; |AP9|clk_reg:inst16                                                                                                           ; clk_reg             ; work         ;
+;    |cpu:inst12|                              ; 2211 (1639)         ; 388 (388)                 ; 0                 ; 1          ; 0    ; 0            ; |AP9|cpu:inst12                                                                                                               ; cpu                 ; work         ;
 ;       |lpm_divide:Div0|                      ; 286 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|cpu:inst12|lpm_divide:Div0                                                                                               ; lpm_divide          ; work         ;
 ;          |lpm_divide_7dm:auto_generated|     ; 286 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|cpu:inst12|lpm_divide:Div0|lpm_divide_7dm:auto_generated                                                                 ; lpm_divide_7dm      ; work         ;
 ;             |sign_div_unsign_dnh:divider|    ; 286 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|cpu:inst12|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider                                     ; sign_div_unsign_dnh ; work         ;
@@ -510,7 +510,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 727   ;
+; Total registers                              ; 743   ;
 ; Number of registers using Synchronous Clear  ; 60    ;
 ; Number of registers using Synchronous Load   ; 199   ;
 ; Number of registers using Asynchronous Clear ; 372   ;
@@ -525,7 +525,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; cpu:inst12|selM2[0]                     ; 26      ;
+; cpu:inst12|selM2[0]                     ; 27      ;
 ; cpu:inst12|SP[13]                       ; 1       ;
 ; cpu:inst12|SP[14]                       ; 1       ;
 ; cpu:inst12|SP[12]                       ; 1       ;
@@ -554,22 +554,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |AP9|VGA_MOD:inst|VGA_SYNC:inst|Vcnt[5]                                                                           ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |AP9|VGA_MOD:inst|VGA_SYNC:inst|Vcnt[2]                                                                           ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |AP9|TEXT_DRAWER:inst2|XP[3]                                                                                      ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |AP9|TEXT_DRAWER:inst2|YP[4]                                                                                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |AP9|cpu:inst12|FR[7]                                                                                             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |AP9|dec_keyboard:inst11|bin_digit[5]                                                                             ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |AP9|TEXT_DRAWER:inst2|YP[7]                                                                                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |AP9|cpu:inst12|FR[12]                                                                                            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |AP9|dec_keyboard:inst11|bin_digit[6]                                                                             ;
 ; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |AP9|cpu:inst12|x[0]                                                                                              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |AP9|keyboard:inst14|INCNT[1]                                                                                     ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |AP9|dec_keyboard:inst11|cc[0]                                                                                    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |AP9|keyboard:inst14|INCNT[3]                                                                                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |AP9|dec_keyboard:inst11|cc[1]                                                                                    ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |AP9|TEXT_DRAWER:inst2|STATE[2]                                                                                   ;
 ; 9:1                ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |AP9|TEXT_DRAWER:inst2|PIXCNT[2]                                                                                  ;
-; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |AP9|cpu:inst12|M3[6]                                                                                             ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |AP9|TEXT_DRAWER:inst2|LNCNT[3]                                                                                   ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |AP9|cpu:inst12|M3[10]                                                                                            ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |AP9|cpu:inst12|FR[2]                                                                                             ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |AP9|cpu:inst12|M5[3]                                                                                             ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |AP9|cpu:inst12|M4[6]                                                                                             ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |AP9|cpu:inst12|M3[4]                                                                                             ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |AP9|TEXT_DRAWER:inst2|LNCNT[0]                                                                                   ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |AP9|cpu:inst12|M3[9]                                                                                             ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |AP9|cpu:inst12|FR[0]                                                                                             ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |AP9|cpu:inst12|M5[1]                                                                                             ;
+; 10:1               ; 16 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |AP9|cpu:inst12|M4[0]                                                                                             ;
 ; 12:1               ; 15 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |AP9|cpu:inst12|M1[10]                                                                                            ;
 ; 13:1               ; 2 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |AP9|cpu:inst12|selM2[2]                                                                                          ;
 ; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |AP9|RAM:inst10|altsyncram:altsyncram_component|altsyncram_doi1:auto_generated|mux_7hb:mux2|l2_w13_n0_mux_dataout ;
@@ -1227,7 +1227,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 727                         ;
+; arriav_ff             ; 743                         ;
 ;     CLR               ; 119                         ;
 ;     CLR SCLR          ; 22                          ;
 ;     CLR SLD           ; 145                         ;
@@ -1238,8 +1238,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 8                           ;
 ;     ENA SLD           ; 30                          ;
 ;     SCLR              ; 17                          ;
-;     plain             ; 94                          ;
-; arriav_lcell_comb     ; 2854                        ;
+;     plain             ; 110                         ;
+; arriav_lcell_comb     ; 2868                        ;
 ;     arith             ; 660                         ;
 ;         0 data inputs ; 78                          ;
 ;         1 data inputs ; 138                         ;
@@ -1247,15 +1247,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 45                          ;
 ;         4 data inputs ; 88                          ;
 ;         5 data inputs ; 245                         ;
-;     extend            ; 40                          ;
-;         7 data inputs ; 40                          ;
-;     normal            ; 2113                        ;
-;         1 data inputs ; 25                          ;
-;         2 data inputs ; 130                         ;
-;         3 data inputs ; 461                         ;
-;         4 data inputs ; 420                         ;
-;         5 data inputs ; 566                         ;
-;         6 data inputs ; 511                         ;
+;     extend            ; 38                          ;
+;         7 data inputs ; 38                          ;
+;     normal            ; 2129                        ;
+;         1 data inputs ; 26                          ;
+;         2 data inputs ; 134                         ;
+;         3 data inputs ; 503                         ;
+;         4 data inputs ; 402                         ;
+;         5 data inputs ; 557                         ;
+;         6 data inputs ; 507                         ;
 ;     shared            ; 41                          ;
 ;         0 data inputs ; 8                           ;
 ;         1 data inputs ; 6                           ;
@@ -1267,7 +1267,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 133                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 36.00                       ;
-; Average LUT depth     ; 16.50                       ;
+; Average LUT depth     ; 16.52                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1276,7 +1276,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:13     ;
 +----------------+--------------+
 
 
@@ -1286,12 +1286,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Fri May 24 18:02:57 2024
+    Info: Processing started: Fri Jun  7 17:50:38 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AP9 -c AP9
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
-    Info (12022): Found design unit 1: cpu-main File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 36
+    Info (12022): Found design unit 1: cpu-main File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 37
     Info (12023): Found entity 1: cpu File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file ap9.bdf
     Info (12023): Found entity 1: AP9
@@ -1513,27 +1513,27 @@ Info (12133): Instantiated megafunction "lpm_dff1:inst1|lpm_ff:lpm_ff_component"
     Info (12134): Parameter "lpm_width" = "1"
 Info (12128): Elaborating entity "TEXT_DRAWER" for hierarchy "TEXT_DRAWER:inst2"
 Info (12128): Elaborating entity "cpu" for hierarchy "cpu:inst12"
-Warning (10492): VHDL Process Statement warning at cpu.vhd(822): signal "FR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 822
-Warning (10492): VHDL Process Statement warning at cpu.vhd(831): signal "FR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 831
-Warning (10492): VHDL Process Statement warning at cpu.vhd(832): signal "FR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 832
-Warning (10492): VHDL Process Statement warning at cpu.vhd(909): signal "result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 909
-Warning (10631): VHDL Process Statement warning at cpu.vhd(811): inferring latch(es) for signal or variable "result", which holds its previous value in one or more paths through the process File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[0]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[1]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[2]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[3]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[4]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[5]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[6]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[7]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[8]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[9]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[10]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[11]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[12]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[13]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[14]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-Info (10041): Inferred latch for "result[15]" at cpu.vhd(811) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
+Warning (10492): VHDL Process Statement warning at cpu.vhd(828): signal "FR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 828
+Warning (10492): VHDL Process Statement warning at cpu.vhd(837): signal "FR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 837
+Warning (10492): VHDL Process Statement warning at cpu.vhd(838): signal "FR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 838
+Warning (10492): VHDL Process Statement warning at cpu.vhd(915): signal "result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 915
+Warning (10631): VHDL Process Statement warning at cpu.vhd(817): inferring latch(es) for signal or variable "result", which holds its previous value in one or more paths through the process File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[0]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[1]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[2]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[3]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[4]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[5]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[6]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[7]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[8]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[9]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[10]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[11]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[12]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[13]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[14]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+Info (10041): Inferred latch for "result[15]" at cpu.vhd(817) File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
 Warning (12125): Using design file seletorclock.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: SeletorClock File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/seletorclock.v Line: 1
 Info (12128): Elaborating entity "SeletorClock" for hierarchy "SeletorClock:inst20"
@@ -1609,12 +1609,12 @@ Info (12128): Elaborating entity "POS_CONV" for hierarchy "POS_CONV:inst13"
 Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer inst5~0
 Info (278001): Inferred 4 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "cpu:inst12|Mod0" File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 868
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "cpu:inst12|Div0" File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 860
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "cpu:inst12|Mod0" File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 874
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "cpu:inst12|Div0" File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 866
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "POS_CONV:inst13|Mod0" File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/POS_CONV.vhd Line: 27
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "POS_CONV:inst13|Div0" File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/POS_CONV.vhd Line: 28
-Info (12130): Elaborated megafunction instantiation "cpu:inst12|lpm_divide:Mod0" File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 868
-Info (12133): Instantiated megafunction "cpu:inst12|lpm_divide:Mod0" with the following parameter: File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 868
+Info (12130): Elaborated megafunction instantiation "cpu:inst12|lpm_divide:Mod0" File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 874
+Info (12133): Instantiated megafunction "cpu:inst12|lpm_divide:Mod0" with the following parameter: File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 874
     Info (12134): Parameter "LPM_WIDTHN" = "16"
     Info (12134): Parameter "LPM_WIDTHD" = "16"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1625,8 +1625,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_dnh File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/db/sign_div_unsign_dnh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_03f.tdf
     Info (12023): Found entity 1: alt_u_div_03f File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/db/alt_u_div_03f.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "cpu:inst12|lpm_divide:Div0" File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 860
-Info (12133): Instantiated megafunction "cpu:inst12|lpm_divide:Div0" with the following parameter: File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 860
+Info (12130): Elaborated megafunction instantiation "cpu:inst12|lpm_divide:Div0" File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 866
+Info (12133): Instantiated megafunction "cpu:inst12|lpm_divide:Div0" with the following parameter: File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 866
     Info (12134): Parameter "LPM_WIDTHN" = "16"
     Info (12134): Parameter "LPM_WIDTHD" = "16"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1657,54 +1657,54 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_nlh File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/db/sign_div_unsign_nlh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kve.tdf
     Info (12023): Found entity 1: alt_u_div_kve File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/db/alt_u_div_kve.tdf Line: 23
-Warning (13012): Latch cpu:inst12|result[14] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[13] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[12] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[11] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[10] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[9] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[8] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[7] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[6] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[5] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[4] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[3] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[2] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[1] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[0] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
-Warning (13012): Latch cpu:inst12|result[15] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 811
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 162
+Warning (13012): Latch cpu:inst12|result[14] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[13] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[12] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[11] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[10] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[9] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[8] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[7] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[6] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[5] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[4] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[3] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[2] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[1] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[0] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
+Warning (13012): Latch cpu:inst12|result[15] has unsafe behavior File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 817
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|OP[5] File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/cpu.vhd Line: 163
 Info (17049): 16 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[6]"
     Warning (15610): No output dependent on input pin "SW[7]"
-Info (21057): Implemented 3412 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3440 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 19 output pins
-    Info (21061): Implemented 3248 logic cells
+    Info (21061): Implemented 3276 logic cells
     Info (21064): Implemented 133 RAM segments
     Info (21062): Implemented 1 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 63 warnings
-    Info: Peak virtual memory: 4937 megabytes
-    Info: Processing ended: Fri May 24 18:03:20 2024
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Peak virtual memory: 4949 megabytes
+    Info: Processing ended: Fri Jun  7 17:51:03 2024
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:33
 
 
