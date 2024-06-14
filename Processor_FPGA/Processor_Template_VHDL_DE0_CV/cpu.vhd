@@ -481,11 +481,25 @@ begin
 -- INC/DEC			RX <- RX (+ or -) 1
 --========================================================================			
 			IF(IR(15 DOWNTO 14) = ARITH AND (IR(13 DOWNTO 10) = INC))	THEN
+				M3 := Reg(RX);
+				M4 := x"0001";
+				
+				x <= M3;
+				y <= M4;
+													
+				selM2 := sUla;
+				LoadReg(RX) := '1';
+				
+				selM6 := sULA;
+				LoadFR := '1';
+				
+				OP(5 DOWNTO 4) <= ARITH;
+				OP(6) <= IR(0);
 				
 				IF(IR(6) = '0') THEN
-					Reg(RX) := Reg(RX) + x"0001";
+					OP(3 DOWNTO 0) <= ADD;
 				ELSE
-					Reg(RX) := Reg(RX) - x"0001";
+					OP(3 DOWNTO 0) <= SUB;
 				END IF;
 				
 				state := fetch;

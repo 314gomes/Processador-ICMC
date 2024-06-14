@@ -1,5 +1,5 @@
 MIF/HEX Update report for AP9
-Fri Jun 14 16:16:05 2024
+Fri Jun 14 17:39:00 2024
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; MIF/HEX Update Summary                                        ;
 +-----------------------+---------------------------------------+
-; MIF/HEX Update Status ; Successful - Fri Jun 14 16:16:05 2024 ;
+; MIF/HEX Update Status ; Successful - Fri Jun 14 17:39:00 2024 ;
 ; Revision Name         ; AP9                                   ;
 ; Top-level Entity Name ; AP9                                   ;
 ; Family                ; Cyclone V                             ;
@@ -62,7 +62,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime MIF/HEX Update
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Fri Jun 14 16:15:52 2024
+    Info: Processing started: Fri Jun 14 17:38:52 2024
 Info: Command: quartus_cdb AP9 -c AP9 --update_mif
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (39024): Processed the following Memory Initialization File(s)
@@ -71,9 +71,9 @@ Info (39024): Processed the following Memory Initialization File(s)
     Info (39025): Processed Memory Initialization File C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/video_mem1.mif File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/video_mem1.mif Line: 0
     Info (39025): Processed Memory Initialization File C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/video_mem2.mif File: C:/Users/13839069/Desktop/Processador-ICMC/Processor_FPGA/Processor_Template_VHDL_DE0_CV/video_mem2.mif Line: 0
 Info: Quartus Prime MIF/HEX Update was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4863 megabytes
-    Info: Processing ended: Fri Jun 14 16:16:05 2024
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Peak virtual memory: 4859 megabytes
+    Info: Processing ended: Fri Jun 14 17:39:00 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:08
 
 
