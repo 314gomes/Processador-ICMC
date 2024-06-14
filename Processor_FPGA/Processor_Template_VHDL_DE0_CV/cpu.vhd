@@ -434,7 +434,7 @@ begin
 						LoadReg(RX) := '1';
 						
 					when "10" =>
-						IF Reg(RY) = x"0000" THEN
+						IF RY = 0 THEN
 							M4 := clk_reg_ms;
 						ELSE
 							M4 := clk_reg_s;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AP9
-Fri Jun  7 17:51:03 2024
+Fri Jun 14 16:34:15 2024
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Jun  7 17:51:03 2024       ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun 14 16:34:15 2024       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; AP9                                         ;
 ; Top-level Entity Name           ; AP9                                         ;
@@ -299,14 +299,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 1724         ;
+; Estimate of Logic utilization (ALMs needed) ; 1723         ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 2868         ;
-;     -- 7 input functions                    ; 38           ;
-;     -- 6 input functions                    ; 507          ;
-;     -- 5 input functions                    ; 802          ;
-;     -- 4 input functions                    ; 496          ;
-;     -- <=3 input functions                  ; 1025         ;
+; Combinational ALUT usage for logic          ; 2865         ;
+;     -- 7 input functions                    ; 37           ;
+;     -- 6 input functions                    ; 509          ;
+;     -- 5 input functions                    ; 796          ;
+;     -- 4 input functions                    ; 497          ;
+;     -- <=3 input functions                  ; 1026         ;
 ;                                             ;              ;
 ; Dedicated logic registers                   ; 743          ;
 ;                                             ;              ;
@@ -318,7 +318,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
 ; Maximum fan-out                             ; 451          ;
-; Total fan-out                               ; 17352        ;
+; Total fan-out                               ; 17333        ;
 ; Average fan-out                             ; 4.56         ;
 +---------------------------------------------+--------------+
 
@@ -328,7 +328,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                           ; Entity Name         ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |AP9                                         ; 2868 (1)            ; 743 (0)                   ; 946176            ; 1          ; 30   ; 0            ; |AP9                                                                                                                          ; AP9                 ; work         ;
+; |AP9                                         ; 2865 (1)            ; 743 (0)                   ; 946176            ; 1          ; 30   ; 0            ; |AP9                                                                                                                          ; AP9                 ; work         ;
 ;    |POS_CONV:inst13|                         ; 228 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|POS_CONV:inst13                                                                                                          ; POS_CONV            ; work         ;
 ;       |lpm_divide:Div0|                      ; 100 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|POS_CONV:inst13|lpm_divide:Div0                                                                                          ; lpm_divide          ; work         ;
 ;          |lpm_divide_hbm:auto_generated|     ; 100 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|POS_CONV:inst13|lpm_divide:Div0|lpm_divide_hbm:auto_generated                                                            ; lpm_divide_hbm      ; work         ;
@@ -385,7 +385,7 @@ https://fpgasoftware.intel.com/eula.
 ;                |decode_5la:decode3|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|VGA_MOD:inst|lpm_ram_dq1:inst2|altsyncram:altsyncram_component|altsyncram_k1j1:auto_generated|decode_5la:decode3         ; decode_5la          ; work         ;
 ;    |clk_div:inst25|                          ; 30 (30)             ; 37 (37)                   ; 0                 ; 0          ; 0    ; 0            ; |AP9|clk_div:inst25                                                                                                           ; clk_div             ; work         ;
 ;    |clk_reg:inst16|                          ; 35 (35)             ; 64 (64)                   ; 0                 ; 0          ; 0    ; 0            ; |AP9|clk_reg:inst16                                                                                                           ; clk_reg             ; work         ;
-;    |cpu:inst12|                              ; 2211 (1639)         ; 388 (388)                 ; 0                 ; 1          ; 0    ; 0            ; |AP9|cpu:inst12                                                                                                               ; cpu                 ; work         ;
+;    |cpu:inst12|                              ; 2208 (1636)         ; 388 (388)                 ; 0                 ; 1          ; 0    ; 0            ; |AP9|cpu:inst12                                                                                                               ; cpu                 ; work         ;
 ;       |lpm_divide:Div0|                      ; 286 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|cpu:inst12|lpm_divide:Div0                                                                                               ; lpm_divide          ; work         ;
 ;          |lpm_divide_7dm:auto_generated|     ; 286 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|cpu:inst12|lpm_divide:Div0|lpm_divide_7dm:auto_generated                                                                 ; lpm_divide_7dm      ; work         ;
 ;             |sign_div_unsign_dnh:divider|    ; 286 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AP9|cpu:inst12|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider                                     ; sign_div_unsign_dnh ; work         ;
@@ -1239,7 +1239,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 30                          ;
 ;     SCLR              ; 17                          ;
 ;     plain             ; 110                         ;
-; arriav_lcell_comb     ; 2868                        ;
+; arriav_lcell_comb     ; 2865                        ;
 ;     arith             ; 660                         ;
 ;         0 data inputs ; 78                          ;
 ;         1 data inputs ; 138                         ;
@@ -1247,15 +1247,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 45                          ;
 ;         4 data inputs ; 88                          ;
 ;         5 data inputs ; 245                         ;
-;     extend            ; 38                          ;
-;         7 data inputs ; 38                          ;
-;     normal            ; 2129                        ;
+;     extend            ; 37                          ;
+;         7 data inputs ; 37                          ;
+;     normal            ; 2127                        ;
 ;         1 data inputs ; 26                          ;
-;         2 data inputs ; 134                         ;
+;         2 data inputs ; 135                         ;
 ;         3 data inputs ; 503                         ;
-;         4 data inputs ; 402                         ;
-;         5 data inputs ; 557                         ;
-;         6 data inputs ; 507                         ;
+;         4 data inputs ; 403                         ;
+;         5 data inputs ; 551                         ;
+;         6 data inputs ; 509                         ;
 ;     shared            ; 41                          ;
 ;         0 data inputs ; 8                           ;
 ;         1 data inputs ; 6                           ;
@@ -1267,7 +1267,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 133                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 36.00                       ;
-; Average LUT depth     ; 16.52                       ;
+; Average LUT depth     ; 16.46                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1286,7 +1286,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Fri Jun  7 17:50:38 2024
+    Info: Processing started: Fri Jun 14 16:33:48 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AP9 -c AP9
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1695,16 +1695,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[6]"
     Warning (15610): No output dependent on input pin "SW[7]"
-Info (21057): Implemented 3440 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3437 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 19 output pins
-    Info (21061): Implemented 3276 logic cells
+    Info (21061): Implemented 3273 logic cells
     Info (21064): Implemented 133 RAM segments
     Info (21062): Implemented 1 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 63 warnings
-    Info: Peak virtual memory: 4949 megabytes
-    Info: Processing ended: Fri Jun  7 17:51:03 2024
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:33
+    Info: Peak virtual memory: 4947 megabytes
+    Info: Processing ended: Fri Jun 14 16:34:15 2024
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:34
 
 
