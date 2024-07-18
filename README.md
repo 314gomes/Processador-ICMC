@@ -65,6 +65,14 @@ Há uma versão online do simulador para facilitar o desenvolvimento de aplicaç
 
 - Pode ser acessado através do link: [https://thiagoambiel.github.io/SimuladorICMC/](https://thiagoambiel.github.io/SimuladorICMC/)
 
+# Clock de tempo real
+
+Para facilitar funções de delay e contagem de tempo que não dependam do clock configurado no processador, foram criados dois novos registradores. O primeiro, RCLKMS, é incrementado em 1 a cada millisegundo independentemente do clock selecionado, chegando ao valor máximo de 999 e retornando para 0. O segundo - RCLKS - é apenas um registrador de 16 bits que incrementa toda vez que RCLKMS volta para zero. É possível ler dos registradores utilizando a instrução `MOV` com algumas modificações, mas não é possível escrever para os registradores no momento.
+
+As principais alteração foram no [simulador antigo](/Simulator_Source/), [Montador](/Assembler_Source/) e no [projeto em FPGA para a placa DE0_CV](/Processor_FPGA/Processor_Template_VHDL_DE0_CV/), para adição dos registradores e modificação da instrução `MOV`. Como exemplos simples de uso, foram adicionados os arquivos `testaclock_simple.asm` e `testaclock.asm` na pasta [Software_Assembly](/Software_Assembly/). Também foi modificada a documentação no [ProcessadorICMC2.pdf](/Manual/ProcessadorICMC2.pdf) para refletir as alterações.
+
+Um vídeo com breve explicação das mudanças pode ser encontrado em https://drive.google.com/file/d/1u3hEkm6tFMXoTPfHRJqzXFS1nK5Q-uzC/view?usp=sharing
+
 # Novo Simulador local usando go
 
 Além do simulador online e o escrito em C++, foi criado um novo simulador cujo objetivo é dar suporte aos sistemas operacionais mais usados com binários pré compilados, além de ter uma interface mais moderna e de simples uso. O [goICMCsim](https://github.com/lucasgpulcinelli/goICMCsim) tem diversas funcionalidades úteis e é facilmente extensível. Para usá-lo, basta baixar o binário deste link:
